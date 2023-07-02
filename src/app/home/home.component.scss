@@ -1,0 +1,33 @@
+@import '../../color';
+@import '../../variables';
+
+#dotAnimation{
+    position: fixed;
+    transition: 0.3s all;
+}
+
+.about-Page{
+    height: 100%;
+
+    .introParagraph{
+        display: flex;
+        padding: 0rem 23rem;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #typedtext{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            h1{
+                color: map-get($color, text-color)
+            }
+            p{
+                color: map-get($color, text-color)
+            }
+        }
+
+    }
+}
+

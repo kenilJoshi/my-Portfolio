@@ -1,0 +1,116 @@
+@import '../../color';
+@import '../../variables';
+
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: map-get($color, navbackground);
+    transition: 0.3s all;
+    padding: 10% 0;
+    
+    a{
+        text-decoration: none;
+        width: 20%;
+        position: relative;
+        text-align: center;
+        min-width: 400px;
+        padding: 3%;
+        font-size: 2em;
+        font-weight: 700;
+        overflow: hidden;
+        margin-bottom: 3%;
+        color: map-get($color, text-secondary-color); 
+        
+        &:before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            // display: none;
+            background-color: rgb(67 58 73 / 42%);;
+            z-index: -1;
+            left: 0%;
+            transform: translateX(-100%);
+            height: 50.5%;
+            top: 0;
+            transition: 0.3s all;
+        }
+        &:hover::before{
+            left: 0%;
+            transform: translateX(0%);
+            display: block;
+            transition: 0.5s all;
+        }
+        &:after{
+            content: "";
+            position: absolute;
+            width: 100%;
+            background-color: rgb(67 58 73 / 42%);;
+            z-index: -1;
+            // display: none;
+            left: 0%;
+            transform: translateX(100%);
+            height: 52.5%;
+            top: 50.5%;
+        }
+        &:hover::after{
+            left: 0%;
+            display: block;
+            transform: translateX(0%);
+            transition: 0.5s all;
+        }
+    }
+}
+.isActive{
+    color: map-get($color, text-color) !important; 
+}
+.side-nav-bar-show{
+    transform: translateY(0%);
+}
+.side-nav-bar-collapsed{
+    transform: translateY(-100%);
+}
+
+.burger{
+    position: fixed;
+    right: 63px;
+    top: 20px;
+    z-index: 9998;
+    cursor: pointer;
+    padding: 5px 4px;
+    background-color: transparent;
+    border: none;
+
+    .line{
+        transition: y 300ms ease-in 300ms,
+        rotate 300ms ease-in,
+        opacity 0ms 300ms;
+        transform-origin: center;
+    }
+    &[aria-expanded="true"]{
+        .line{
+            transition: y 300ms ease-in,
+            rotate 300ms ease-in 300ms,
+            opacity 0ms 300ms;
+        }
+        :is(.top,.bottom){
+            y:40;
+        }
+
+        .top{
+            rotate: 50deg;
+            transform:  translateY(0px);
+        }
+        .bottom{
+            rotate: -50deg;
+            transform: translateY(9px) translateX(1px);
+        }
+        .middle{
+            opacity: 0;
+        }
+    }
+}

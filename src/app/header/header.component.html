@@ -1,0 +1,28 @@
+<div>
+  <div>
+    <nav [ngClass]="(showSideNav | async) ? 'side-nav-bar-show' : 'side-nav-bar-collapsed'" class="navbar" id="navbar">
+      <a routerLink="/" [ngClass]="(activeClass=='')?'isActive':''">
+        <span>about</span>
+      </a>
+      <a routerLink="/project" [ngClass]="(activeClass=='project')?'isActive':''">
+        <span>project</span>
+      </a>
+      <a routerLink="/contact-me" [ngClass]="(activeClass=='contact-me')?'isActive':''">
+        <span>contact</span>
+      </a>
+    </nav>
+  </div>
+
+  <!-- <div class="burger" [ngClass]="(showSideNav | async) ? 'cross-burger' : ''" id="burger" (click)="burgerButton()">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div> -->
+  <button class="burger" aria-controls="primary-navigation"  [attr.aria-expanded]="showSideNav | async" (click)="burgerButton()">
+    <svg class="hamburger" viewBox="0 0 100 100" width="45">
+      <rect class="line top" width="90" height="7" x="8" y="20" rx="5" fill="#938794"></rect>
+      <rect class="line middle" width="90" height="7" x="8" y="40" rx="5" fill="#938794"></rect>
+      <rect class="line bottom" width="90" height="7" x="8" y="60" rx="5" fill="#938794"></rect>
+    </svg>
+  </button>
+</div>
