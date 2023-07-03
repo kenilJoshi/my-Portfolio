@@ -12,6 +12,7 @@
     background-color: map-get($color, navbackground);
     transition: 0.3s all;
     padding: 10% 0;
+    z-index: 10;
     
     a{
         text-decoration: none;

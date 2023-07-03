@@ -16,6 +16,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
         #typedtext{
             display: flex;
             flex-direction: column;
@@ -26,6 +27,16 @@
             p{
                 color: map-get($color, text-color)
             }
+        }
+        .game_start_button{
+            position: absolute;
+            bottom: 106px;
+            padding: 15px 55px;
+            background-color: rgb(198, 2, 2);
+            color: map-get($color, text-color);
+            font-weight: 800;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
         }
 
     }

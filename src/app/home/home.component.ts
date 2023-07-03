@@ -16,7 +16,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
     "<h1 style='text-align: center; color:#F4EEE0;'>Hello, I'm Kenil Joshi</h1>",
     "<p id='intro_para' style='color:#F4EEE0; text-align:center;'>Kenil is a skilled full stack developer proficient in HTML, CSS, JavaScript, Angular, Node.js, and MongoDB. He creates dynamic user interfaces, builds scalable web applications, and develops efficient server-side functionalities using these technologies.</p>"
   );
-
+  
+  destination: HTMLElement
   iSpeed = 25;
   iIndex = 0;
   iArrLength = this.aText[0].length;
@@ -36,6 +37,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
    }
   ngOnInit() {
+    console.log(this.aText);
+    
     this.canvas = document.getElementById('canvas1') as HTMLCanvasElement
     this.ctx = this.canvas.getContext('2d')
     this.canvas.width = window.innerWidth
@@ -46,7 +49,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    console.log('herer');
 
     // anime({
     //   targets: '.cursor',
@@ -61,23 +63,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   typewriter() {
     this.sContents = ' ';
     this.iRow = Math.max(0, this.iIndex - this.iScrollAt);
-    console.log('hi', this.iIndex)
-    let destination = document.getElementById("typedtext");
+
+    this.destination = document.getElementById("typedtext");
     this.cursor=document.getElementsByClassName('cursor')
 
     while (this.iRow < this.iIndex) {
-      console.log('br tag');
       if (this.iIndex !== this.aText.length){
         this.sContents += this.aText[this.iRow++] + '<br />';
       }
     }
-    destination.innerHTML = this.sContents + this.aText[this.iIndex].substring(0, this.iTextPos) + this.dotAnimation();
+    this.destination.innerHTML = this.sContents + this.aText[this.iIndex].substring(0, this.iTextPos) + this.dotAnimation();
     
     if (this.iTextPos++ == this.iArrLength) {
       this.iTextPos = 0;
       this.iIndex++;
       if (this.iIndex === this.aText.length) {
-        console.log('joo');
+        ('joo');
         let intro_para=document.getElementById('intro_para')
         let cursor_element = document.createElement("span")
         cursor_element.innerHTML = "<svg class='cursor1' id='cursor1' width='10' height='2'><rect width='10' style=' fill:#F4EEE0;' height='2'></rect></svg>"
@@ -94,7 +95,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.x = rect.left;   // X-coordinate of the element's top-left corner
         this.y = rect.top; 
         this.animate()
-        destination.removeChild(this.cursor)
       }
       if (this.iIndex != this.aText.length) {
         this.iArrLength = this.aText[this.iIndex].length;
@@ -103,16 +103,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
           , 500);
       }
     } else {
-      console.log('hii ho',this.aText)
-      console.log(this.iSpeed)
       setTimeout(() => 
         this.typewriter()
         , this.iSpeed);
     }
   }
 
+  // typewriter(){
+
+  // }
+
   dotAnimation(){
-    console.log('kenil');
     
     if(this.cursor.length!==0){
       const rect = this.cursor[0].getBoundingClientRect();
@@ -136,11 +137,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.particleArray[j].fall(this.ctx)
         }
         setTimeout(()=>{
+          
           this.particleArray = [];
+          this.destination.removeChild(this.cursor)
         },10)
       }else{
-        console.log('here');
-        
         cancelAnimationFrame(this.animationId);
         return
       }
