@@ -28,10 +28,10 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    this.ngxService.start(); 
-    setTimeout(() => {
-      this.ngxService.stop();     
-    }, 5000);
+    // this.ngxService.start(); 
+    // setTimeout(() => {
+    //   this.ngxService.stop();     
+    // }, 5000);
   }
 
   prepareRoute(outlet: RouterOutlet) {
