@@ -9,6 +9,55 @@
 .about-Page{
     height: 100%;
 
+    .follow-me{
+      z-index: 1001;
+      position: fixed;
+      left: 0;
+      top: calc(50% - (165px / 2));
+      width: 55px;
+      height: 165px;
+
+      li{
+        transform: translateX(-7px);
+        transition: 0.3s ease-in-out;
+      }
+
+      li:hover{
+        transform: translateX(5px);
+      }
+
+      li a{        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 68px;
+        height: 55px;
+        padding-left: 20px;
+        margin-left: -20px;
+        transition: transform 425ms cubic-bezier(.05,.65,.18,1);
+      }
+      li .github{
+        background-color: #4e545a;
+        .githubImg{
+          background: url('../../assets/img/githubLogo.png') no-repeat 0 1px;
+          background-size: contain;
+        }
+      }
+      li .linkedin{
+        background-color: #0077ba;
+        .linkedinImg{
+          background: url('../../assets/img/linkedinLogo.png') no-repeat 0 1px;
+          background-size: contain;
+        }
+      }
+      li span{
+        display: block;
+        width: 35px;
+        height: 35px;
+      }
+
+    }
+
     .introParagraph{
         display: flex;
         padding: 0rem 27rem;
