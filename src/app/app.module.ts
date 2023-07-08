@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProjectComponent } from './project/project.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { PageControlComponent } from './page-control/page-control.component';
 
 const routes:Routes=[
   {path:'', component:HomeComponent,data: { animation: 'AboutPage' }},
@@ -37,7 +38,8 @@ const loaderConfig: NgxUiLoaderConfig = {
     HeaderComponent,
     HomeComponent,
     ProjectComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    PageControlComponent
   ],
   imports: [
     BrowserModule,

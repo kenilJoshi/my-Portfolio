@@ -13,8 +13,8 @@ import anime from 'animejs/lib/anime.es.js';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   aText: Array<string> = new Array(
-    "<h1 style='text-align: center; color:#F4EEE0;'>Hello, I'm Kenil Joshi</h1>",
-    "<p>Kenil is a skilled full stack developer proficient in HTML, CSS, JavaScript, Angular, Node.js, and MongoDB. He creates dynamic user interfaces, builds scalable web applications, and develops efficient server-side functionalities using these technologies.</p>"
+    "<h1 style='color:#F4EEE0;'>Hello, I'm Kenil Joshi</h1>",
+    "<p style='color:#d7d3cbc7;'>Kenil is a skilled full stack developer proficient in HTML, CSS, JavaScript, Angular, Node.js, and MongoDB. He creates dynamic user interfaces, builds scalable web applications, and develops efficient server-side functionalities using these technologies.</p>"
   );
   
   destination: HTMLElement
@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   cursor:any
   cursorId:any
   iTextPos = 0;
+  adding_style_para: any = ''
   game_start_button: any
   coord_of_button: object
   sContents = '';
@@ -59,11 +60,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
   typewriter() {
     this.sContents = ' ';
     this.iRow = Math.max(0, this.iIndex - this.iScrollAt);
+    console.log(this.iRow);
     
     this.destination = document.getElementById("typedtext");
     this.cursor=document.getElementsByClassName('cursor')
     
-
     while (this.iRow < this.iIndex) {
       if (this.iIndex !== this.aText.length){
         this.sContents += this.aText[this.iRow++] + '<br />';

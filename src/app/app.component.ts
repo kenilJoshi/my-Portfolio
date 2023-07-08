@@ -1,8 +1,9 @@
 import { Component,OnInit } from '@angular/core';
-import { ChildrenOutletContexts, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { ChildrenOutletContexts, NavigationEnd, NavigationStart, Router, RouterEvent, RouterOutlet } from '@angular/router';
 import { NavigationService } from './service/navigation.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { fader } from './animaion';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,8 @@ import { fader } from './animaion';
   ]
 })
 export class AppComponent implements OnInit {
+
+  page_control_route: string = ''
   
   constructor(
     private _router: Router,
@@ -28,10 +31,35 @@ export class AppComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-    // this.ngxService.start(); 
+    console.log('hiiii');
+    // this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
+    // // Stop the foreground loading after 5s
     // setTimeout(() => {
-    //   this.ngxService.stop();     
+    //   this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
     // }, 5000);
+    this._router.events.pipe(
+      filter((event: RouterEvent) => event instanceof NavigationEnd)
+   ).subscribe((val: NavigationEnd)=>{
+      console.log(val.url == '/project');
+      
+      if(val.url == '/'){
+        this.page_control_route = 'Home'
+        console.log('/');
+        
+      }
+      else if(val.url == '/project'){
+        this.page_control_route = 'Project'
+        console.log('/project');
+        
+      }else if(val.url == '/contact-me'){
+        this.page_control_route = 'Contact'
+        console.log('/contact-me');
+        
+      }
+      
+    })
+    console.log(this.page_control_route);
+    
   }
 
   prepareRoute(outlet: RouterOutlet) {

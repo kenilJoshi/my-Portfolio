@@ -24,9 +24,8 @@ export class Particle{
         this.x += this.speedX
         this.y += this.speedY
         if(this.x < coord_of_button.x + coord_of_button.width && this.y < coord_of_button.y + coord_of_button.height && this.x + this.size > coord_of_button.x && this.y + this.size > coord_of_button.y){
-          this.y -= 40
-          this.x += 40
-          console.log(this.y);
+          this.y -= Math.floor(Math.random() * 21) + 20;
+          this.x += Math.floor(Math.random() * 21) + 20;
           
           // this.x += this.speedX
           this.draw(canvasClass)

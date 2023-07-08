@@ -2,7 +2,7 @@
 <div class="full-app-container">
     <ngx-ui-loader></ngx-ui-loader>
     <app-header />
-    <div [@routeAnimations]="prepareRoute(outlet)" class="routeoutlet">
+    <div [@routeAnimations]="prepareRoute(outlet)" class="routeoutlet" style="position: relative;">
         <router-outlet #outlet="outlet"></router-outlet>
     </div>
 </div>

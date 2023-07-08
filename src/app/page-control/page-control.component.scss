@@ -1,0 +1,36 @@
+@import '../../color';
+@import '../../variables';
+
+
+.project_class_contact span{
+    color: map-get($color, text-color);
+    text-decoration: none;
+}
+.project_class_home{
+    color: map-get($color, text-secondary-color);;
+    text-decoration: none;
+    font-weight: 700;
+
+    :before{
+        content: "";
+        width: 63px;
+        border: 2px solid map-get($color, text-secondary-color);
+        border-radius: 4px;
+        position: absolute;
+        left: 27px;
+        transform: rotate(45deg);
+        top: -14px;
+    }
+    :after{
+        content: "";
+        width: 63px;
+        border: 2px solid map-get($color, text-secondary-color);
+        position: absolute;
+        border-radius: 4px;
+        left: 26px;
+        transform: rotate(-45deg);
+        top: 33px;
+    }
+
+}
+

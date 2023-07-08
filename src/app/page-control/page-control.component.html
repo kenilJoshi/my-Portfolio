@@ -1,0 +1,26 @@
+<div>
+
+    <div *ngIf="page_control_route == 'Contact'">
+        <a routerLink="/project" class="project_class_contact">
+            <span>project</span>
+            <em></em>
+        </a>
+    </div>
+
+    <div *ngIf="page_control_route == 'Project'">
+        <div style="position: relative;">
+            <a routerLink="/" class="home_class">
+                <span>Home</span>
+            </a>
+            <a routerLink="/contact-me" class="contact_class">
+                <span>Contact</span>
+            </a>
+        </div>
+    </div>
+
+    <div *ngIf="page_control_route == 'Home'">
+            <a (click)="handleClick('project')" routerLink="/project" class="project_class_home" >
+                <span>Project</span>
+            </a>
+    </div>
+</div>
