@@ -11,6 +11,7 @@ import { ProjectComponent } from './project/project.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { PageControlComponent } from './page-control/page-control.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes:Routes=[
   {path:'', component:HomeComponent,data: { animation: 'AboutPage' }},
@@ -47,6 +48,7 @@ const loaderConfig: NgxUiLoaderConfig = {
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    MatIconModule,
     RouterModule.forRoot(routes),
     NgxUiLoaderModule.forRoot(loaderConfig)
   ],
