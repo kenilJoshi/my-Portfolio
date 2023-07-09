@@ -3,7 +3,6 @@
     <div *ngIf="page_control_route == 'Contact'">
         <a routerLink="/project" class="project_class_contact">
             <span>project</span>
-            <em></em>
         </a>
     </div>
 
@@ -18,9 +17,12 @@
         </div>
     </div>
 
-    <div *ngIf="page_control_route == 'Home'">
-            <a (click)="handleClick('project')" routerLink="/project" class="project_class_home" >
-                <span>Project</span>
+    <div *ngIf="page_control_route == 'Home'" routerLink="/project" class="page_control_class">
+            <a (click)="handleClick('project')" class="project_class_home" >
+                <span>
+                    Project
+                </span>
             </a>
+            <em></em>
     </div>
 </div>
