@@ -22,6 +22,9 @@ import { trigger, transition, style, animate, state, keyframes } from '@angular/
 export class PageControlComponent implements OnInit {
   arc: string = 'false';
   @Input() page_control_route: string
+  @Input() direction: string
+  @Input() route: string
+  @Input() text: string
 
   ngOnInit(): void {
     

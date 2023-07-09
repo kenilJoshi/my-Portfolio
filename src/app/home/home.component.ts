@@ -143,7 +143,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       }
     }else{
       this.particleArray.push(new Particle(this.x, this.y))
-      this.particleArray.push(new Particle(this.x, this.y))
+      // this.particleArray.push(new Particle(this.x, this.y))
       for (let i = 0; i < this.particleArray.length; i++) {
         this.particleArray[i].fall(this.ctx, this.coord_of_button)
       }

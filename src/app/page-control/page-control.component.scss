@@ -2,6 +2,32 @@
 @import '../../variables';
 
 
+%arrow-styles {
+    transition: 0.3s ease-in-out;
+  
+    &:before {
+        content: "";
+        width: 32px;
+        border: 2px solid rgba(163, 160, 154, 0.7803921569);
+        border-radius: 4px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: 114px;
+        transition: 0.3s ease-in-out;
+    }
+  
+    &:after {
+        content: "";
+        width: 34px;
+        border: 2px solid rgba(163, 160, 154, 0.7803921569);
+        position: absolute;
+        border-radius: 4px;
+        transform: rotate(-45deg);
+        top: 141px;
+        transition: 0.3s ease-in-out;
+    }
+  }
+
 .project_class_contact span{
     color: map-get($color, text-color);
     text-decoration: none;
@@ -19,27 +45,54 @@
         color: map-get($color, text-secondary-color);
         text-decoration: none;
         font-weight: 700;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        transform: translateY(0px);
     }
-    em{
+
+    .right {
+        @extend %arrow-styles;
         &:before{
-            content: "";
-            width: 40px;
-            border: 2px solid map-get($color, text-secondary-color);
-            border-radius: 4px;
-            position: absolute;
-            left: 72px;
-            transform: rotate(45deg);
-            top: 113px;    
+            left: 73px;
         }
         &:after{
-            content: "";
-            width: 40px;
-            border: 2px solid map-get($color, text-secondary-color);
-            position: absolute;
-            border-radius: 4px;
-            left: 72px;
-            transform: rotate(-45deg);
-            top: 143px;
+            left: 71px;
+        }
+      }
+    .left{
+        @extend %arrow-styles;
+      
+        &:before {
+          left: 0px;
+          transform: rotate(-45deg);
+        }
+      
+        &:after {
+          left: 0px;
+          transform: rotate(45deg);
+        }
+    }
+
+    &:hover{
+        .right_side{
+            opacity: 1;
+            transform: translateX(-20px);
+        }
+        .left_side{
+            opacity: 1;
+            transform: translateX(20px);
+        }
+        .right:before{
+            transform: rotate(55deg);
+        }
+        .right:after{
+            transform: rotate(-55deg);
+        }
+        .left:before{
+            transform: rotate(-55deg);
+        }
+        .left:after{
+            transform: rotate(55deg);
         }
     }
 }

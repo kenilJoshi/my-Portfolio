@@ -1,28 +1,11 @@
 <div>
 
-    <div *ngIf="page_control_route == 'Contact'">
-        <a routerLink="/project" class="project_class_contact">
-            <span>project</span>
+    <div *ngIf="page_control_route" routerLink="/{{route}}" class="page_control_class">
+        <em [ngClass]="{'left':direction=='left','right':direction=='right'}"></em>
+        <a (click)="handleClick('project')" class="project_class_home" [ngClass]="{'left_side':direction=='left','right_side':direction=='right'}" >
+            <span>
+                {{text}}
+            </span>
         </a>
-    </div>
-
-    <div *ngIf="page_control_route == 'Project'">
-        <div style="position: relative;">
-            <a routerLink="/" class="home_class">
-                <span>Home</span>
-            </a>
-            <a routerLink="/contact-me" class="contact_class">
-                <span>Contact</span>
-            </a>
-        </div>
-    </div>
-
-    <div *ngIf="page_control_route == 'Home'" routerLink="/project" class="page_control_class">
-            <a (click)="handleClick('project')" class="project_class_home" >
-                <span>
-                    Project
-                </span>
-            </a>
-            <em></em>
     </div>
 </div>
