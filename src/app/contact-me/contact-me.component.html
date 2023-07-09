@@ -1,6 +1,29 @@
 <div class="contact-page">
-    <p style="color:azure;">Contact works!</p>
     <div style="position: absolute; top: 16rem; left: 109px;">
         <app-page-control [page_control_route] = "'Contact'" [direction]="'left'" [route]="'project'" [text]="'Project'" />
     </div>
+
+    <div class="contact_page">
+        <div class="contact_title">
+            <h1>Connect with me</h1>
+            <p>Feel free to connect with me at keniljoshi3@gmail.com. I would be delighted to hear from you and address any inquiries, feedback, or discussions you may have. Whether it's a question about a particular topic, a collaboration opportunity, or simply a friendly conversation, I am always open to connecting with individuals who share a passion for knowledge and learning.</p>
+        </div>
+        <div class="input_part">
+            <form [formGroup]="contact_form" (ngSubmit)="submitForm()">
+                <ul>
+                    <li>
+                        <input type="text" placeholder="Enter your text" formControlName="name">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Enter your text" formControlName="email">
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Enter your text" formControlName="contact">
+                    </li>
+                </ul>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
 </div>

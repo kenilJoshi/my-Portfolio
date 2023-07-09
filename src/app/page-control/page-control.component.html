@@ -1,5 +1,4 @@
 <div>
-
     <div *ngIf="page_control_route" routerLink="/{{route}}" class="page_control_class">
         <em [ngClass]="{'left':direction=='left','right':direction=='right'}"></em>
         <a (click)="handleClick('project')" class="project_class_home" [ngClass]="{'left_side':direction=='left','right_side':direction=='right'}" >

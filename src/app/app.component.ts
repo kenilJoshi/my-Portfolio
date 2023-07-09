@@ -37,28 +37,6 @@ export class AppComponent implements OnInit {
     // setTimeout(() => {
     //   this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
     // }, 5000);
-    this._router.events.pipe(
-      filter((event: RouterEvent) => event instanceof NavigationEnd)
-   ).subscribe((val: NavigationEnd)=>{
-      console.log(val.url == '/project');
-      
-      if(val.url == '/'){
-        this.page_control_route = 'Home'
-        console.log('/');
-        
-      }
-      else if(val.url == '/project'){
-        this.page_control_route = 'Project'
-        console.log('/project');
-        
-      }else if(val.url == '/contact-me'){
-        this.page_control_route = 'Contact'
-        console.log('/contact-me');
-        
-      }
-      
-    })
-    console.log(this.page_control_route);
     
   }
 

@@ -8,7 +8,7 @@
     &:before {
         content: "";
         width: 32px;
-        border: 2px solid rgba(163, 160, 154, 0.7803921569);
+        border: 2px solid map-get($color, text-secondary-color);
         border-radius: 4px;
         position: absolute;
         transform: rotate(45deg);
@@ -19,7 +19,7 @@
     &:after {
         content: "";
         width: 34px;
-        border: 2px solid rgba(163, 160, 154, 0.7803921569);
+        border: 2px solid map-get($color, text-secondary-color);
         position: absolute;
         border-radius: 4px;
         transform: rotate(-45deg);

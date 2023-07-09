@@ -1,0 +1,28 @@
+@import '../../color';
+@import '../../variables';
+
+
+.contact-page{
+    height: 100%;
+    .contact_page{
+        display: flex;
+        padding: 0rem 22rem;
+        height: 100%;
+        // color: map-get($color, text-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        .contact_title{
+            h1{
+                font-weight: 700;
+                color: map-get($color, text-color);
+            }
+            p{
+                color: map-get($color, text-secondary-color);;
+            }
+        }
+
+    }
+}
