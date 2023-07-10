@@ -18,11 +18,244 @@
             h1{
                 font-weight: 700;
                 color: map-get($color, text-color);
+                padding: 7px 0px;
             }
             p{
-                color: map-get($color, text-secondary-color);;
+                color: map-get($color, text-secondary-color);
+                font-size: 18px;
+            }
+        }
+
+        .lets-talk{
+            width: 100%;
+            ul{
+                list-style: none;
+                position: relative;
+                margin-bottom: 15px;
+                margin-top: 40px;
+                cursor: text;
+                height: 50px;
+                padding: 0;
+                li{
+                    width: 100%;
+                    position: absolute;
+                    .chip{
+                        position: absolute;
+
+                        label{
+                            position: relative;
+                            top: 12px;
+                            left: 35px;
+                            cursor: text;
+                            font-weight: 800;
+                            color: #8c8987;
+                            font-size: 18px;
+                        }
+                    }
+                    mat-icon{
+                        position: absolute;
+                        color: map-get($color, text-secondary-color);
+                        top: 8px;
+                    }
+                    input{
+                        width: 80%;
+                        height: 37px;
+                        background-color: #393646;
+                        border-bottom: 2px solid rgba(163, 160, 154, 0.7803921569);
+                        border-top: none;
+                        border-right: none;
+                        border-left: none;
+                        font-weight: 800;
+                        padding: 0px 36px;
+                        color: #8c8987;
+                        font-size: 18px;
+
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+                .active{
+                    z-index: 120;
+                }
+            }
+            .submit{
+                display: flex;
+                gap: 13px;
+                .next_button {
+                    background: rgb(0, 121, 107);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0;
+                    cursor: pointer;
+                    outline-offset: 4px;
+                    .front {
+                        display: block;
+                        padding: 9px 22px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        background: rgb(0, 150, 136);
+                        color: white;
+                        transform: translateY(-4px);
+                        will-change: transform;
+                        transition: transform 250ms;
+                        font-weight: 800;
+                    }
+                    &:focus:not(:focus-visible) {
+                        outline: none;
+                    }
+                    &:hover .front {
+                        transform: translateY(-6px);
+                    }
+                    &:active .front {
+                        transform: translateY(-2px);
+                    }
+                    &:disabled{
+                        background: rgb(115, 115, 115);
+                    }
+                    &:disabled .front{
+                        background: rgb(158, 158, 158);
+                        color: rgb(196, 196, 196);
+                    }
+                }
+                .submit_button{
+                    background: rgb(0, 121, 107);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0;
+                    cursor: pointer;
+                    outline-offset: 4px;
+                    .front {
+                        display: block;
+                        padding: 9px 22px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        background: rgb(0, 150, 136);
+                        color: white;
+                        transform: translateY(-4px);
+                        will-change: transform;
+                        transition: transform 250ms;
+                        font-weight: 800;
+                    }
+                    &:focus:not(:focus-visible) {
+                        outline: none;
+                    }
+                    &:hover .front {
+                        transform: translateY(-6px);
+                    }
+                    &:active .front {
+                        transform: translateY(-2px);
+                    }
+                    &:disabled{
+                        background: rgb(115, 115, 115);
+                    }
+                    &:disabled .front{
+                        background: rgb(158, 158, 158);
+                        color: rgb(196, 196, 196);
+                    }
+                }
+            }
+        }
+        .lets-social{
+            width: 100%;
+            padding: 47px 5px;
+            .text-social{
+                padding-bottom: 31px;
+                h1{
+                    font-weight: 700;
+                    color: map-get($color, text-color);
+                    padding: 7px 0px;
+                }
+                p{
+                    color: map-get($color, text-secondary-color);
+                    font-size: 18px;
+                }   
+            }
+            .social-button{
+                display: flex;
+                gap: 13px;
+                .githubBtn {
+                    background: rgb(53, 53, 53);;
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0;
+                    cursor: pointer;
+                    outline-offset: 4px;
+                    text-decoration: none;
+                    .front {
+                        display: flex;
+                        padding: 9px 22px;
+                        align-items: center;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        background: rgb(79, 79, 79);
+                        color: rgb(255, 255, 255);
+                        transform: translateY(-4px);
+                        will-change: transform;
+                        transition: transform 250ms;
+                        font-weight: 800;
+                        justify-content: center;
+
+                        img{
+                            width: 21px;
+                            padding-right: 7px;
+                        }
+                    }
+                    
+                    &:focus:not(:focus-visible) {
+                        outline: none;
+                    }
+                    &:hover .front {
+                        transform: translateY(-6px);
+                    }
+                    &:active .front {
+                        transform: translateY(-2px);
+                    }
+                }
+                .linkedinBtn{
+                    background: rgb(0, 62, 94);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 0;
+                    cursor: pointer;
+                    outline-offset: 4px;
+                    text-decoration: none;
+                    .front {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 9px 22px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        background: rgb(0, 119, 181);
+                        color: rgb(255, 255, 255);
+                        transform: translateY(-4px);
+                        will-change: transform;
+                        transition: transform 250ms;
+                        font-weight: 800;
+
+                        img{
+                            width: 21px;
+                            padding-right: 7px;
+                        }
+                    }
+                    &:focus:not(:focus-visible) {
+                        outline: none;
+                    }
+                    &:hover .front {
+                        transform: translateY(-6px);
+                    }
+                    &:active .front {
+                        transform: translateY(-2px);
+                    }
+                }
             }
         }
 
     }
 }
+
+.githubImg{
+    background: url('../../assets/img/githubLogo.png') no-repeat 0 1px;
+    background-size: contain;
+  }

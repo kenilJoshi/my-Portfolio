@@ -9,14 +9,33 @@ import { FormBuilder,FormGroup, Validators, ReactiveFormsModule } from '@angular
 export class ContactMeComponent implements OnInit {
 
   contact_form: FormGroup
+  isActiveElement: number = 1;
+  next_disabled: boolean = false
 
   constructor(
     private fb: FormBuilder
   ){
-    this.createForm()
   }
 
   ngOnInit(): void {
+    this.createForm()
+    this.contact_form.valueChanges.subscribe({
+      next:(data)=>{
+        let active_class = document.getElementsByClassName('active')
+        console.log(active_class[0].classList[0]);
+        
+        if(data){
+          if(active_class[0].classList[0] == 'email'){
+            if(this.contact_form.controls['email'].status == 'VALID'){
+              this.next_disabled = true  
+            }
+          }else{
+            this.next_disabled = true
+          }
+        }
+      }
+    })
+
   }
 
   createForm() {
@@ -30,6 +49,13 @@ export class ContactMeComponent implements OnInit {
   submitForm(){
     console.log(this.contact_form);
     
+  }
+
+  nextElement(){
+    if(this.isActiveElement < 3){
+      this.next_disabled = false
+      this.isActiveElement++
+    }
   }
   
 
