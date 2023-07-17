@@ -17,15 +17,19 @@
                             <label for="nameInput">Fill your name</label>    
                         </div>
                         <mat-icon>person</mat-icon>
-                        <input type="text" id="nameInput" formControlName="name">
+                        <input type="text" id="nameInput" (focusout)="onInputFocusOut()" formControlName="name">
                     </li>
                     <li class="email" [ngClass]="{'active':isActiveElement==2}">
+                        <div class="chip">
+                            <mat-icon>mail</mat-icon>
+                            <label for="emailInput">Fill your email </label>    
+                        </div>
                         <mat-icon>mail</mat-icon>
-                        <input type="text" formControlName="email">
+                        <input type="text" id="emailInput" (focusout)="onInputFocusOut()" formControlName="email">
                     </li>
                     <li class="comment" [ngClass]="{'active':isActiveElement==3}">
                         <mat-icon> add_comment</mat-icon>
-                        <input type="text" placeholder="Enter your text" formControlName="contact">
+                        <input type="text" placeholder="Enter your text" (focusout)="onInputFocusOut()" formControlName="contact">
                     </li>
                 </ul>
                 <div class="submit">
